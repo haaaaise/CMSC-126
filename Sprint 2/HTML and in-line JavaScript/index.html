@@ -1,0 +1,97 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Social Media Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="{% static 'playground/style_ht.css' %}">
+    <title>UPV Komsai Hub</title>
+  </head>
+  <body>
+<!--Navbar -->
+<div class="bod">
+  <nav class="mb-1 navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="{% url 'login_home' %}"><b>upv_komsai_hub</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+      aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'about' %}">About
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'helpdesk' %}">Helpdesk</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'latest_updates' %}">Latest Updates</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'sharespaces' %}">ShareSpace</a>
+        </li>
+      </ul></b>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="navbar-nav mr-auto nav-link" href="{% url 'home_page' %}">exit()</a>
+        </li>
+        <li class="nav-item avatar">
+          <a class="nav-link p-0" href="#">
+            <img src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t39.30808-6/240655032_4238302772959304_7173211593359587148_n.png?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_eui2=AeFHVvlnfksrRuFcfA0liPxhK8lIvT0nJh4ryUi9PScmHtiwDeICUJE_Zl-UGK52qwMcHuUwOAcBkIAjfNWROgrk&_nc_ohc=yikJXvXtmr4AX9UJY3z&_nc_ht=scontent.fmnl9-3.fna&oh=00_AT-TcF0AzLCvP6-vxBY3xAdJbpUG9ARrk_TR0WoBHALTog&oe=62A362CE" class="rounded-circle z-depth-0"
+              alt="avatar image" height="35">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav><center>
+      <div class="container">
+        {% block content %} {% endblock %}
+      </div></center>
+
+</div>
+    <hr>
+<!--/.Navbar -->
+<!-- Footer should be hidden if not base directory!-->
+<!-- JavaScript for Footer is DONE-->
+    {% comment %} <script>
+      if (document.url != "") {
+        document.getElementsByClassName("footer")[0].style.display = 'none';
+    } {% endcomment %}
+    <footer>
+    <div class="container">
+    <center>
+    <h1 class="text-white font"> Social Media 
+    <br>
+    <a href="https://www.facebook.com/UPVKomsai.Org"><img src = "{%static 'images/facebook.png' %}" class="social youtube" height="50" width="50"></a>
+    <a href="https://www.youtube.com/channel/UCzCry2HIa6xrl0m96B2MHiQ"><img src = "{%static 'images/youtube.png' %}" class="social youtube" height="50" width="50"></a>
+    </center>
+    </h1>    
+    </div>
+    </footer>
+  {% comment %} </script> {% endcomment %}
+  </body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+</html>
