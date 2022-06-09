@@ -1,0 +1,38 @@
+<!-- extending from base template -->
+
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block content %}
+<main id="contactForm" class="contactForm">
+  <!-- The Form Box -->
+  <form method="post" class="formBody" action="" >
+
+  <!-- ADD CSRF TOKEN INSIDE FORM -->
+  {% csrf_token %}
+  <link href="{% static 'playground/style_formbox.css' %}" rel="stylesheet">
+  <h1>SHARE A MESSAGE TOWARDS THE SHARESPACE</h1>
+    <p>Let's do this!</p>
+    <div class="formGroup">
+          <!-- Form: Name -->
+      <div>
+          <!-- invalid class when error -->
+          <input type="text" name="sName" placeholder="{Name}" class="invalid">
+          <!-- errorHint with two classes, errorHint & hidden -->
+          <!-- hidden class to "hide it" unless there's an error-->
+          <div class="errorHint hidden">"Please enter your name"</div>
+      </div>
+      <!-- Form: Message (using textarea) -->
+      <div>
+          <textarea name="sMessage" placeholder="{Message}" rows="14" class="invalid"></textarea>
+          <div class="errorHint hidden">"Please enter your message"</div>
+      </div>
+      <!-- Form: Submit Button -->
+      <div>
+        <button type="submit" class="btn btn-primary"><strong>SHARE</strong></button>
+      </div>
+</main>
+{% endblock content %}
+
+

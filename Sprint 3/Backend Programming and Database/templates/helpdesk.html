@@ -1,0 +1,64 @@
+<!-- extending from base template -->
+
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block content %}
+    <!-- Contact Start -->
+    <div class="container-fluid mt-5 pt-4">
+      <form method="post" class="formBody" action="" >
+        {% csrf_token %}
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8">
+                  <div class="bg-white border border-top-0 p-4 mb-3">
+                      <div class="mb-4">
+                          <h6 class="text-uppercase font-weight-bold">Welcome to the Helpdesk!</h6>
+                          <p class="mb-4">UPV_KOMSAI_HUB is always striving to improve its service towards the userbase. If you have any concerns, please do not hesitate to send them towards the administration team for fixing. Happy browsing!</p>
+            <div class="mb-3">
+                              <div class="d-flex align-items-center mb-2">
+                                  <i class="fa fa-map-marker-alt text-primary mr-2"></i>
+                                  <h6 class="font-weight-bold mb-0">Our Office</h6>
+                              </div>
+                              <p class="m-0">Cabangbang St., Jaro, Iloilo</p>
+                          </div>
+                          <div class="mb-3">
+                              <div class="d-flex align-items-center mb-2">
+                                  <i class="fa fa-envelope-open text-primary mr-2"></i>
+                                  <h6 class="font-weight-bold mb-0">Email Us</h6>
+                              </div>
+                              <p class="m-0">upv_komsai_hub@gmail.com</p>
+                          </div>
+                          <div class="mb-3">
+                              <div class="d-flex align-items-center mb-2">
+                                  <i class="fa fa-phone-alt text-primary mr-2"></i>
+                                  <h6 class="font-weight-bold mb-0">Call Us</h6>
+                              </div>
+                              <p class="m-0">+639952693243/p>
+                          </div>
+                      </div>
+                      <h6 class="text-uppercase font-weight-bold mb-3">Kindly type your concern and message here:</h6>
+                      <form>
+                          <div class="form-row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <input type="text" name ="name" class="form-control p-4" placeholder="Your Name" required="required"/>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <input type="text" name ="concern" class="form-control p-4" placeholder="Subject" required="required"/>
+                          </div>
+                          <div class="form-group">
+                              <textarea class="form-control" name = "message" rows="4" placeholder="Message" required="required"></textarea>
+                          </div>
+                          <div>
+                              <button class="btn btn-primary font-weight-semi-bold px-4" style="height: 50px;"
+                                  type="submit">Send Message</button>
+                          </div>
+                      </form>
+                  </div>
+{% endblock content %}
+
+

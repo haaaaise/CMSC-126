@@ -1,0 +1,138 @@
+:root {
+    --clr-primary-400: 263 55% 52%;
+    --clr-secondary-400: 217 19% 35%;
+    --clr-secondary-500: 219 29% 14%;
+    --clr-neutral-100: 0 0% 100%;
+    --clr-neutral-200: 210 46% 95%;
+    --clr-neutral-300: 0 0% 81%;
+    --ff-primary: "Barlow Semi Condensed", sans-serif;
+    --fw-400: 500;
+    --fw-700: 600;
+    --fs-300: 0.6875rem;
+    --fs-400: 0.8125rem;
+    --fs-500: 1.25rem;
+  }
+  
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  /* utilities */
+  .flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+  }
+  
+  .flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-spacer, 1em);
+  }
+  
+  .bg-primary-400 {
+    background: hsl(var(--clr-primary-400));
+  }
+  .bg-secondary-400 {
+    background: hsl(var(--clr-secondary-400));
+  }
+  .bg-secondary-500 {
+    background: hsl(var(--clr-secondary-500));
+  }
+  
+  .bg-neutral-100 {
+    background: hsl(var(--clr-neutral-100));
+  }
+  
+  .text-neutral-100 {
+    color: hsl(var(--clr-neutral-100));
+  }
+  .text-secondary-400 {
+    color: hsl(var(--clr-secondary-400));
+  }
+  .border-primary-400 {
+    border: 2px solid #a775f1;
+  }
+  
+  /* components */
+  
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: cyan;
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 360px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px; 
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: rgb(159, 36, 207);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgb(128, 22, 170);
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  border-radius: 50%;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  float: left;
+
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}

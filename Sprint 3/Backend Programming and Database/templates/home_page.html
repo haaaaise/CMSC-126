@@ -1,0 +1,22 @@
+<!-- extending from base template -->
+
+{% extends "index_shallow.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="heading">
+    <h1 class="display-3 text-white"><strong>
+      <img src = "{%static 'images/hub_logo.png' %}">
+  Wisdom. Virtue. Logic.
+</strong></h1>
+  </div>
+  <form action = "{% url 'login' %}">
+    <button type="submit" class="btn btn-primary"><strong>SIGN IN</strong></button>
+  </form>
+  <br>
+  <form action = "{% url 'register' %}">
+    <button type="submit" class="btn btn-primary"><strong>REGISTER</strong></button>
+  </form>    
+  <br>
+
+{% endblock content %}

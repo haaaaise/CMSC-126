@@ -1,0 +1,391 @@
+:root {
+    --clr-primary-400: 263 55% 52%;
+    --clr-secondary-400: 217 19% 35%;
+    --clr-secondary-500: 219 29% 14%;
+    --clr-neutral-100: 0 0% 100%;
+    --clr-neutral-200: 210 46% 95%;
+    --clr-neutral-300: 0 0% 81%;
+  
+    --ff-primary: "Barlow Semi Condensed", sans-serif;
+  
+    --fw-400: 500;
+    --fw-700: 600;
+  
+    --fs-300: 0.6875rem;
+    --fs-400: 0.8125rem;
+    --fs-500: 1.25rem;
+  }
+  
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Remove default margin */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+  
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role="list"],
+  ol[role="list"] {
+    list-style: none;
+  }
+  
+  /* Set core root defaults */
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+  
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+  
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+  
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-400);
+  
+    background-color: hsl(var(--clr-neutral-200));
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-weight: var(--fw-700);
+  }
+  
+  /* utilities */
+  .flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+  }
+  
+  .flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-spacer, 1em);
+  }
+  
+  .bg-primary-400 {
+    background: hsl(var(--clr-primary-400));
+  }
+  .bg-secondary-400 {
+    background: hsl(var(--clr-secondary-400));
+  }
+  .bg-secondary-500 {
+    background: hsl(var(--clr-secondary-500));
+  }
+  
+  .bg-neutral-100 {
+    background: hsl(var(--clr-neutral-100));
+  }
+  
+  .text-neutral-100 {
+    color: hsl(var(--clr-neutral-100));
+  }
+  .text-secondary-400 {
+    color: hsl(var(--clr-secondary-400));
+  }
+  .border-primary-400 {
+    border: 2px solid #a775f1;
+  }
+  
+  /* components */
+  
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: cyan;
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 360px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px; 
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: rgb(159, 36, 207);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgb(128, 22, 170);
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  border-radius: 50%;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  float: left;
+
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.welcome{
+  display: flex;
+  color: #ddd;
+  padding-left: 520px;
+  padding-top: 10px;
+  float: right;
+  align-items: center;
+  justify-content: center;
+}
+
+  .subject-grid {
+    display: grid;
+    gap: 0.5rem;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-template-areas:
+     'one'
+     'two'
+     'three'
+     'four'
+     'five'
+     'six'
+     'seven'
+     'eight'
+     'nine';
+  
+    padding-block: 2rem;
+    width: min(100%, 120rem);
+    height: min(100%, 10rem);
+    margin-inline: auto;
+  }
+  
+  .subject {
+    position:relative;
+    font-size: var(--fs-400);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+  }
+  
+  .subject:nth-child(1) {
+    grid-area: one;
+  }
+  .subject:nth-child(2) {
+    grid-area: two;
+  }
+  .subject:nth-child(3) {
+    grid-area: three;
+  }
+  .subject:nth-child(4) {
+    grid-area: four;
+  }
+  .subject:nth-child(5) {
+    grid-area: five;
+  }
+  .subject:nth-child(6) {
+    grid-area: six;
+  }
+  .subject:nth-child(7) {
+    grid-area: seven;
+  }
+  .subject:nth-child(8) {
+    grid-area: eight;
+  }
+  
+  @media screen and (min-width: 33em) {
+    .testimonial-grid {
+        grid-template-areas:
+        "one one"
+        "two three"
+        "five five"
+        "four four";
+    }
+  }
+  
+  @media screen and (min-width: 38em) {
+    .testimonial-grid {
+      grid-template-areas:
+       'one one'
+       'two five'
+       'three five'
+       'four four';
+    }
+  }
+  
+  @media screen and (min-width: 54em) {
+    .testimonial-grid {
+        grid-template-areas:
+        "one one two"
+        "five five five"
+        "three four four";
+    }
+  }
+  
+  @media screen and (min-width: 75em) {
+    .subject-grid {
+        grid-template-areas:
+        "six one two five"
+        "six three four five"
+        "nine seven seven eight";
+    }
+  }  
+  
+  .subject img {
+    width: 1.75rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+  
+  .subject .name {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-400);
+    line-height: 1;
+  }
+  
+  .subject .position {
+    font-size: var(--fs-300);
+    opacity: 0.5;
+  }
+  
+  .subject > p:first-of-type {
+    font-size: var(--fs-500);
+    line-height: 1.2;
+  }
+  
+  .subject > p:last-of-type {
+    opacity: 0.7;
+  }
+  .hd_row {
+    display: flex;
+  }
+  
+  .hd_col {
+    align-items: center;
+    flex: 33.33%;
+    padding-top: 10px;
+    padding-left: 50px;
+  }
+
+  .favbar ul li{
+      list-style: none;
+      display: inline-block;
+      margin: 0 20px; 
+      position: relative;
+  }
+  .favbar ul li a{
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+  }
+  .favbar ul li::after{
+      content: '';
+      height: 3px;
+      width: 0;
+      background: rgb(159, 36, 207);
+      position: absolute;
+      left: 0;
+      bottom: 0px;
+      transition: 0.5s;
+  }
+  .favbar ul li:hover::after{
+      width: 100%;
+  }

@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="{% static 'playground/style_home.css' %}">
+        <title> HOMEPAGE </title>
+    </head>
+    <body>
+      <div class="banner">
+        <div class="navbar">
+          <a href ="{% url 'basepage' %}"> <img src = "{%static 'images/hub_logo.png' %}" class =" logo"> </a>
+          <ul>
+            <li> <a href ="{% url 'testpage' %}">About</a></li>
+            <li> <a href ="{% url 'helpdesk' %}">Helpdesk</a></li>
+            <li> <a href ="{% url 'latest_updates' %}">Latest Updates</a></li>
+            <li> <a href ="{% url 'sharespace' %}">ShareSpace</a></li>
+            <li> <a href ="{% url 'home_test' %}">Home Test</a></li>
+        </div>
+        <div class="topnav">
+          <div class="search-container">
+            <form action="/action_page.php">
+              <input type="text" placeholder="Search.." name="search">
+              <div class="welcome">
+                <h2> Welcome, {{user}}!</h2>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="subject-grid">
+            <article class="subject flow bg-secondary-400 text-neutral-100"> <a href = "{% url 'testpage' %}"> 
+              <div class="flex">
+                <div>
+                  <img  src="{%static 'images/image-daniel.jpg' %}" alt="daniel clifford">
+                </div>
+                <div>
+                  <h2 class="name">NOOB Series: Python</h2>
+                  <p class="position">Daniel Clifford</p>
+                </div>
+              </div>
+              <p>
+                I received a job offer mid-course, and the subjects I learned were current, if not more so,
+                in the company I joined. I honestly feel I got every penny’s worth.
+              </p>
+              <p>
+                “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a
+                transition and have heard some people who had an amazing experience here. I signed up
+                for the free intro course and found it incredibly fun! I enrolled shortly thereafter.
+                The next 12 weeks was the best - and most grueling - time of my life. Since completing
+                the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup. ”
+              </p>
+            </a>
+            </article>
+            <article class="subject flow bg-secondary-400 text-neutral-100">
+              <div class="flex">
+                <div>
+                  <img src="static/images/image-jonathan.jpg" alt="Jonathan Walters">
+                </div>
+                <div>
+                  <h2 class="name">NOOB SERIES: Java</h2>
+                  <p class="position">Jonathan Walters</p>
+                </div>
+              </div>
+              <p>
+                The team was very supportive and kept me motivated
+              </p>
+              <p>
+                “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer
+                for a big company. This was one of the best investments I’ve made in myself. ”
+              </p>
+            </article>
+            <article class="subject flow bg-secondary-400 text-neutral-100">
+              <div class="flex">
+                <div>
+                  <img src="static/images/image-jeanette.jpg" alt="Jeanette Harmon">
+                </div>
+                <div>
+                  <h2 class="name">NOOB SERIES: C</h2>
+                  <p class="position">Jeanette Harmon</p>
+                </div>
+              </div>
+              <p>
+                An overall wonderful and rewarding experience</p>
+              <p>
+                “ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living
+                while doing something I love. ”
+              </p>
+            </article>
+            <article class="subject flow bg-secondary-400 text-neutral-100">
+              <div class="flex">
+                <div>
+                  <img class="border-primary-400" src="static/images/image-patrick.jpg" alt="Patrick Abrams">
+                </div>
+                <div>
+                  <h2 class="name">NOOB SERIES: CSS</h2>
+                  <p class="position">Patrick Abrams</p>
+                </div>
+              </div>
+              <p>
+                Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and
+                learning from their experiences was easy.
+              </p>
+              <p>
+                “ The staff seem genuinely concerned about my progress which I find really refreshing. The program
+                gave me the confidence necessary to be able to go out in the world and present myself as a capable
+                junior developer. The standard is above the rest. You will get the personal attention you need from
+                an incredible community of smart and amazing people. ”
+              </p>
+            </article>
+            <article class="subject flow bg-secondary-400 text-neutral-100">
+              <div class="flex">
+                <div>
+                  <img src="static/images/image-kira.jpg" alt="Kira Whittle">
+                </div>
+                <div>
+                  <h2 class="name">NOOB SERIES: Database Management</h2>
+                  <p class="position">Kira Whittle</p>
+                </div>
+              </div>
+              <p>
+                Such a life-changing experience. Highly recommended!
+              </p>
+              <p>
+                “ Before joining the bootcamp, I’ve never written a line of code. I needed some structure from
+                professionals who can help me learn programming step by step. I was encouraged to enroll by a former
+                student of theirs who can only say wonderful things about the program. The entire curriculum and staff
+                did not disappoint. They were very hands-on and I never had to wait long for assistance. The agile team
+                project, in particular, was outstanding. It took my learning to the next level in a way that no tutorial
+                could ever have. In fact, I’ve often referred to it during interviews as an example of my developent
+                experience. It certainly helped me land a job as a full-stack developer after receiving multiple offers.
+                100% recommend! ”
+              </p>
+            </article>
+            <article class="subject flow bg-secondary-500 text-neutral-100">
+              <div class="flex">
+                <div>
+                  <img src="static/images/anon_char.png" alt="Anonymous User">
+                </div>
+                <div>
+                  <h2 class="favorites">{{user}}'s Favorites</h2>
+                  <div class ="favbar">
+                    <ul>
+                      <li><a href = "{% url 'testpage' %}"> 1st Year ShareSpace </a></li>
+                      <li><a href = "{% url 'testpage' %}"> 2nd Year ShareSpace </a></li>
+                      <li><a href = "{% url 'testpage' %}"> 3rd Year ShareSpace </a></li>
+                      <li><a href = "{% url 'testpage' %}"> 4th Year ShareSpace </a></li>
+                  </div>
+                </div>        
+              </div>
+            </article>
+            <article class="subject grid-col-span-2 flow bg-primary-400 quote text-neutral-100">
+              <div class="flex">
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."           
+              </p>
+              </article>
+              <article class="subject grid-col-span-2 flow bg-primary-400 quote text-neutral-100">
+                <div class="flex">
+                  <div>
+                    <h2 class="name">PENDING TASKS</h2>
+                </div>
+                <ul>
+                  <li> Task 1 </li>
+                  <li> Task 2 </li>
+                  <li> Task 3 </li>
+                </article>
+                <article class="subject grid-col-span-2 flow bg-primary-400 quote text-neutral-100">
+                  <div class="flex">
+                    <div class = "helpdesk">
+                      <h2>Komsai HelpDesk</h2>
+                      <div class = "hd_row">
+                        <div class = "hd_col">
+                          <a href = "{% url 'testpage' %}">  <img src = "{%static 'images/message.png' %}"> </a>
+                        </div>
+                        <div class = "hd_col">
+                          <a href = "{% url 'testpage' %}">  <img src = "{%static 'images/email.png' %}"></a>
+                        </div>
+                        <div class = "hd_col">
+                        <a href = "{% url 'testpage' %}">  <img src = "{%static 'images/call.png' %}"></a>
+                        </div>
+                        <div class = "hd_col">
+                          <a href = "{% url 'testpage' %}">  <img src = "{%static 'images/upload_1.png' %}"></a>
+                        </div>
+                      </div>
+                    </div>        
+                  </div>
+                </article>
+          </div>
+        </div>
+    </body>
+</html>
